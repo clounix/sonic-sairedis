@@ -50,7 +50,7 @@ AC_ARG_ENABLE(syncd,
 esac],[syncd=true])
 AM_CONDITIONAL(SYNCD, test x$syncd = xtrue)
 AM_COND_IF([SYNCD], [
-        AM_COND_IF([SAIVS], [], [AC_CHECK_LIB([sai], [main], [AC_MSG_NOTICE(libsai found)], [AC_MSG_ERROR(libsai is required for syncd)])
+        AM_COND_IF([SAIVS], [], [AC_CHECK_LIB([sai], [main], [AC_MSG_NOTICE(libsai found)], [AC_MSG_ERROR(libsai is required for syncd)], [-lpthread])
 ])])
 
 AC_ARG_ENABLE(rpcserver,
