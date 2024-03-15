@@ -155,6 +155,9 @@ config_syncd_barefoot()
 config_syncd_clounix()
 {
     CMD_ARGS+=" -p $HWSKU_DIR/sai.profile"
+    if [ -e /usr/share/sonic/platform/platform_asic_install.sh ]; then
+        /usr/share/sonic/platform/platform_asic_install.sh
+    fi
 }
 
 config_syncd_nephos()
