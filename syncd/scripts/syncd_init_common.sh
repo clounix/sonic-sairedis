@@ -315,6 +315,11 @@ config_syncd_soda()
     CMD_ARGS+=" -l -p $HWSKU_DIR/sai.profile"
 }
 
+config_syncd_clounix()
+{
+    CMD_ARGS+=" -p $HWSKU_DIR/sai.profile"
+}
+
 config_syncd_innovium()
 {
     CMD_ARGS+=" -p $HWSKU_DIR/sai.profile"
@@ -429,6 +434,8 @@ config_syncd()
         config_syncd_nephos
     elif [ "$SONIC_ASIC_TYPE" == "vs" ]; then
         config_syncd_vs
+    elif [ "$SONIC_ASIC_TYPE" == "clounix" ]; then
+        config_syncd_clounix
     elif [ "$SONIC_ASIC_TYPE" == "innovium" ]; then
         config_syncd_innovium
     elif [ "$SONIC_ASIC_TYPE" == "soda" ]; then
